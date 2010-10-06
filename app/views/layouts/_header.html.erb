@@ -1,0 +1,39 @@
+<div id="header">
+  <div id="menuWrap">
+    <div class="menu left">
+      <ul id="selectedMenu">
+        <li class="active"><%= link_to 'HOME', root_path %></li>
+        <li><%= link_to 'NEWS', '/categories/news' %></li>
+        <li><%= link_to 'REVIEWS', '/categories/reviews' %></li>
+        <li><%= link_to 'VIDEOS', '/categories/videos' %></li>
+        <li><%= link_to 'HOW-TO', '/categories/how-to' %></li>
+        <li><%= link_to 'TOOLS', '/categories/tools' %></li>
+        <li><%= link_to 'SOCIAL', '/categories/social' %></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+    <div class="logins right">
+      <ul>
+        <% unless current_user %>
+          <li><%= RPXNow.popup_code(image_tag("facebook.jpg"), RPX_REALM, rpx_login_url, :language=> 'en') %></li>
+          <li><%= link_to '<span>LOGIN</span>', login_path %></li>
+          <li><%= link_to '<span>REGISTER</span>', register_path %></li>
+        <% else %>
+          <li><%= link_to '<span>LOGOUT</span>', logout_path %></li>
+        <% end %>
+      </ul>
+      <div class="clr"></div>
+    </div>
+      <div class="clr"></div>
+  </div>                
+  <div id="logoBanner">
+    <div class="logo left">
+      <%= link_to image_tag("smallclouds-logo.png"), '#' %>
+    </div>
+    <div class="banner right">
+      <%= link_to image_tag("banner.jpg"), '#' %>
+    </div>
+    <div class="clr">
+    </div>
+  </div>
+</div><!--end header-->

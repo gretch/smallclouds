@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>smallClouds</title>
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag :defaults, 'jquery-1.3.6.min.js', 'tabbing.js' %>
+  <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+  <!--[if lte IE 6]>
+  <style type="text/css">
+    body {behavior: url("css/csshover3.htc");}
+    div { behavior: url(iepngfix.htc) }
+  </style> 
+  <script type="text/javascript" src="js/png.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!--main holder-->
+  <div id="page">
+    <div class="pageWrap">
+      <%= render :partial =>'layouts/header' %>
+
+      <p style="color: green"><%= flash[:notice] %></p>
+
+   		<!--container-->
+      <div class="content">
+			
+			  <!-- main-column -->
+        <div class="entryArea left">
+				  <%= yield %>
+        </div>
+        
+        <!-- sidebar -->
+        <%= render :partial =>'layouts/sidebar' %>
+               	           
+      </div><!--end of whole content-->
+    </div><!--end pagewrap-->        
+    <%= render :partial =>'layouts/footer' %>
+	</div>
+</body>
+</html>

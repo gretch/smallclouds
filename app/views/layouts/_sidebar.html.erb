@@ -1,0 +1,50 @@
+<div class="rightArea right">
+  <div id="searchArea">
+    <%= render :partial => 'shared/search' %>
+  </div>
+
+  <div class="videoArea">
+    <div class="videoTitle">
+      <%= link_to 'The Office: Melora Hardin 2', '#' %>
+    </div>
+    <div class="video">
+      <object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/PYnCb6yrSI8&amp;hl=en_US&amp;fs=1?rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/PYnCb6yrSI8&amp;hl=en_US&amp;fs=1?rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="289" height="230"></embed></object>
+    </div>
+  </div>
+  
+  <div class="sideBanner">
+    <a href="#"><%= image_tag('bannerRhs.jpg') %></a>
+  </div> 
+
+  <!-- Start Tab Jquery -->
+  <div id="container" style="margin-top:20px;"> 
+	  <div> 
+      <ul id="tab"> 
+        <li id="l1"><a id="t1" onClick="message('1');" title="MOST COMMENTED">Most Read</a></li>	
+        <li id="l2"><a id="t2" onClick="message('2');" title="MOST READ">Most Commented</a></li>
+      </ul> 
+    </div> 					  
+    <div id="c1" style="display:block;"> 
+      <div class="mostCommented" style="margin-top:4px;">
+        <div class="commentList">
+          <ul>
+            <%= render :partial => 'shared/content', :collection => @most_read_contents, :locals => {:items_count => @most_read_count} %> 
+          </ul> 
+        </div>
+      </div>   
+    </div>
+
+    <div id="c2" style="display:none;"> 
+      <div class="mostCommented" style="margin-top:4px;">
+        <div class="commentList">
+          <ul>
+            <%= render :partial => 'shared/content', :collection => @most_commented_contents, :locals => {:items_count => @most_commented_count} %> 
+          </ul> 
+        </div>
+      </div>   
+    </div> 							
+  </div>                     
+
+</div><!--end RHS-->
+
+<div class="clr" />

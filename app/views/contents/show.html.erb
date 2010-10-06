@@ -1,0 +1,22 @@
+<div class="entryWrap">
+  <div class="h1Wrap">
+    <h1><%= link_to truncate(@content.title, :length => 60), @content.source %></h1>
+  </div>
+
+<br />
+<%= render :partial => 'shared/share', :locals => {:content => @content} %>
+<br />
+<p>
+  <%= @content.body %>
+</p>
+
+<%= link_to 'Back', contents_path %>
+
+<h3>Comments</h3>
+<ul>
+  <%= render :partial => "comment", :collection => @content.comments %>
+</ul>
+
+<%= render :partial => "new_comment", :locals => { :content_id => @content.id} if current_user %>
+
+</div>
